@@ -18,9 +18,13 @@ namespace TopDown.Movement
         }
 
         private void Update()
-        {  
-            Vector3 legsLookPoint = transform.position + new Vector3(playerMover.CurrentInput.x, playerMover.CurrentInput.y);
-            LookAt(legs, Vector3.zero);
+        {
+            // Piernas se mueven en dirección del teclado.
+            // Vector3 legsLookPoint = transform.position + new Vector3(playerMover.CurrentInput.x, playerMover.CurrentInput.y);
+            
+            // Piernas se mueven en la dirección a la que apunta el mouse.
+            Vector3 mousePositionTest = Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue());
+            LookAt(legs, mousePositionTest);
         }
 
     }
