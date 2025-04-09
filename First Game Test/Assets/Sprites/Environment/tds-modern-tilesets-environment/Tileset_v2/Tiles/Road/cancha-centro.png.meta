@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 7336aa673ca853746bce9979f31db3de
+guid: 339267aa3f3350841879c846e379c54e
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -2155860587684687675
-    second: Road Blank Small_0
+      213: 132572716968130336
+    second: cancha-centro_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -37,7 +37,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -74,7 +74,7 @@ TextureImporter:
     buildTarget: DefaultTexturePlatform
     maxTextureSize: 64
     resizeAlgorithm: 0
-    textureFormat: 4
+    textureFormat: -1
     textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Road Blank Small_0
+      name: cancha-centro_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 2100
-        height: 1050
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 5c01acdb738d412e0800000000000000
-      internalID: -2155860587684687675
+      spriteID: 0273bc50f2ef6d100800000000000000
+      internalID: 132572716968130336
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Road Blank Small_0: -2155860587684687675
+      cancha-centro_0: 132572716968130336
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

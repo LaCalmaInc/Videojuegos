@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: b77171345a54edd4ea26f324e97f77e1
+guid: 1003bb2f4287a40498db0dbe9878b157
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -5818322276100690275
-    second: Road_No Pass Double_0
+      213: 9195250314964687757
+    second: cancha-borde_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -37,7 +37,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -74,7 +74,7 @@ TextureImporter:
     buildTarget: DefaultTexturePlatform
     maxTextureSize: 64
     resizeAlgorithm: 0
-    textureFormat: 4
+    textureFormat: -1
     textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Road_No Pass Double_0
+      name: cancha-borde_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 2100
-        height: 2100
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d9ea64877ba214fa0800000000000000
-      internalID: -5818322276100690275
+      spriteID: d8bd44461771c9f70800000000000000
+      internalID: 9195250314964687757
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Road_No Pass Double_0: -5818322276100690275
+      cancha-borde_0: 9195250314964687757
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
