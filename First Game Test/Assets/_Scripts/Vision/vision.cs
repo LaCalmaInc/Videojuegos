@@ -91,7 +91,7 @@ public class vision : MonoBehaviour
     }
 
     // Opcional: Dibujar en el editor el área del FOV para visualización
-    private void OnDrawGizmos()
+    public void OnDrawGizmos()
     {
         Gizmos.color = Color.yellow;
         // Dibuja el círculo que representa el radio de visión
