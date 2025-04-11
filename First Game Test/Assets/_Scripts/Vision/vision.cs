@@ -4,6 +4,7 @@ using System.Collections.Generic;
 
 public class vision : MonoBehaviour
 {
+
     [Header("Configuración del FOV")]
     [Tooltip("Radio de alcance de la visión (cuánto distancia puede ver el personaje).")]
     public float viewRadius = 5f;
@@ -110,4 +111,5 @@ public class vision : MonoBehaviour
             Gizmos.DrawLine(transform.position, target.position);
         }
     }
+    
 }
