@@ -10,14 +10,22 @@ namespace TopDown.Enemies
         [SerializeField] private float speed = 3f;
 
         private Rigidbody2D rb;
+        private TopDown.Movement.PlayerModeManager playerModeManager;
 
         private void Awake()
         {
             rb = GetComponent<Rigidbody2D>();
+            playerModeManager = player.GetComponent<TopDown.Movement.PlayerModeManager>();
         }
 
         private void FixedUpdate()
         {
+            if (playerModeManager != null && playerModeManager.IsImmortal)
+            {
+                rb.linearVelocity = Vector2.zero;
+                return;
+            }
+
             float distance = Vector2.Distance(transform.position, player.position);
 
             if (distance <= chaseRange)
