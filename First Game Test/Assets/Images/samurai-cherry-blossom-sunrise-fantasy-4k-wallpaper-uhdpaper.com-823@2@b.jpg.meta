@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: d689e46eb905e85458104ab3f534ad4b
+guid: 57349a26964e7584c94cd3792b2fa70f
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -3435004508693858885
-    second: Checkbox 02_0
+      213: 5013318606147881374
+    second: samurai-cherry-blossom-sunrise-fantasy-4k-wallpaper-uhdpaper.com-823@2@b_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -37,7 +37,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -46,12 +46,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 128
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Checkbox 02_0
+      name: samurai-cherry-blossom-sunrise-fantasy-4k-wallpaper-uhdpaper.com-823@2@b_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 83
-        height: 17
+        width: 3840
+        height: 2160
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: bb5ff6949996450d0800000000000000
-      internalID: -3435004508693858885
+      spriteID: e990d49e5b2e29540800000000000000
+      internalID: 5013318606147881374
       vertices: []
       indices: 
       edges: []
@@ -138,7 +138,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -147,8 +147,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      Checkbox 02_0: -3435004508693858885
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
