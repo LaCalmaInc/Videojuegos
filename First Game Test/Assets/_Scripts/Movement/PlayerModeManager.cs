@@ -16,9 +16,11 @@ namespace TopDown.Movement
 
         [SerializeField] private Camera mainCamera;
         [SerializeField] private LayerMask visibleLayers;
+        [SerializeField] private GameObject blackOverlay;
 
         private void Update()
         {
+            if (MenuPausa.GameIsPaused) return;
             if (Keyboard.current.leftCtrlKey.wasPressedThisFrame || Keyboard.current.rightCtrlKey.wasPressedThisFrame)
             {
                 ToggleMode();
@@ -30,16 +32,23 @@ namespace TopDown.Movement
             if (CurrentMode == PlayerMode.Normal)
             {
                 CurrentMode = PlayerMode.Immortal;
-                // Oculta visión
-                mainCamera.cullingMask = visibleLayers; //0
+
+                // Mostrar pantalla negra
+                if (blackOverlay != null)
+                    blackOverlay.SetActive(true);
             }
             else
             {
                 CurrentMode = PlayerMode.Normal;
-                // Restaura visión
-                mainCamera.cullingMask = visibleLayers;
+
+                // Ocultar pantalla negra
+                if (blackOverlay != null)
+                    blackOverlay.SetActive(false);
             }
+
+            mainCamera.cullingMask = visibleLayers;
         }
+
 
         public bool IsImmortal => CurrentMode == PlayerMode.Immortal;
     }

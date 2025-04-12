@@ -5,6 +5,8 @@ using System.Collections;
 namespace TopDown.Movement
 {
     [RequireComponent(typeof(PlayerInput))]
+    
+
     public class PlayerMovement : Mover
     {
         [SerializeField] private AudioClip[] footstepClips;
@@ -14,7 +16,6 @@ namespace TopDown.Movement
         private AudioSource audioSource;
         private bool isWalking = false;
         private Coroutine footstepRoutine;
-
         private PlayerModeManager modeManager;
 
         private void Start()
@@ -25,6 +26,7 @@ namespace TopDown.Movement
 
         private void OnMove(InputValue value)
         {
+            if (MenuPausa.GameIsPaused) return;
             Vector3 playerInput = new Vector3(value.Get<Vector2>().x, value.Get<Vector2>().y, 0);
             currentInput = playerInput;
 

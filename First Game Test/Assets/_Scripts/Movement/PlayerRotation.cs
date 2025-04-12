@@ -13,6 +13,7 @@ namespace TopDown.Movement
         [SerializeField] private Mover playerMover;
         private void OnLook(InputValue value)
         {
+            if (MenuPausa.GameIsPaused) return;
             Vector2 mousePosition = Camera.main.ScreenToWorldPoint(value.Get<Vector2>());
             LookAt(torso, mousePosition);
         }
@@ -23,6 +24,9 @@ namespace TopDown.Movement
             // Vector3 legsLookPoint = transform.position + new Vector3(playerMover.CurrentInput.x, playerMover.CurrentInput.y);
             
             // Piernas se mueven en la dirección a la que apunta el mouse.
+            if (MenuPausa.GameIsPaused) return;
+            if (Time.timeScale == 0f) return;
+
             Vector3 mousePositionTest = Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue());
             LookAt(legs, mousePositionTest);
         }
