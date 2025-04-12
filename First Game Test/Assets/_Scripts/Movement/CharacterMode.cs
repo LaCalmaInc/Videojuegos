@@ -24,6 +24,7 @@ public class CharacterMode : MonoBehaviour
 
     private void Update()
     {
+        if (MenuPausa.GameIsPaused) return;
         HandleModeSwitch();
         HandleMovement();
         HandleImmortalVisibility();
