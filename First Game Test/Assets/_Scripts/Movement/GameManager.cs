@@ -8,6 +8,9 @@ public class GameManager : MonoBehaviour
     [Header("Objetivos")]
     public int totalCollectibles = 5;
     private int collected = 0;
+    public int CollectedCount => collected;
+    public int TotalCollectibles => totalCollectibles;
+
 
     [Header("UI")]
     [SerializeField] private TextMeshProUGUI counterText;
@@ -27,13 +30,11 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         SpawnCollectibles();
-        UpdateUI();
     }
 
     public void Collect()
     {
         collected++;
-        UpdateUI();
 
         if (collected >= totalCollectibles)
         {
@@ -41,10 +42,6 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    private void UpdateUI()
-    {
-        counterText.text = $"Objetos: {collected}/{totalCollectibles}";
-    }
 
     private void SpawnCollectibles()
     {
