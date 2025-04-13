@@ -8,6 +8,11 @@ public class PlayerHealth : MonoBehaviour
     public int MaxLives => maxLives;
     private PlayerModeManager modeManager;
 
+
+    [Header("Botón de Pausa y Menú de Pausa")]
+    [SerializeField] private GameObject botonPausa;
+    [SerializeField] private GameObject deadMenu;
+
     [SerializeField] private AudioClip[] damageClips;
     private AudioSource audioSource;
 
@@ -46,6 +51,10 @@ public class PlayerHealth : MonoBehaviour
         Debug.Log("El jugador ha muerto.");
         // Aquí puedes: reiniciar el juego, mostrar UI de muerte, etc.
         gameObject.SetActive(false);
+        botonPausa.SetActive(false);
+        deadMenu.SetActive(true);
+        Time.timeScale = 0f;
+        MenuPausa.GameIsPaused= true;
     }
     public int CurrentLives => currentLives;
 
