@@ -3,6 +3,8 @@ using TopDown.Movement;
 
 public class PlayerHealth : MonoBehaviour
 {
+    [SerializeField] private AudioClip defeatMusic;    // Solo en PlayerHealth
+    [SerializeField] private AudioSource musicSource;
     [SerializeField] private int maxLives = 3;
     private int currentLives;
     public int MaxLives => maxLives;
@@ -55,6 +57,13 @@ public class PlayerHealth : MonoBehaviour
         deadMenu.SetActive(true);
         Time.timeScale = 0f;
         MenuPausa.GameIsPaused= true;
+        if (musicSource != null && defeatMusic != null)
+        {
+            musicSource.Stop();
+            musicSource.clip = defeatMusic;
+            musicSource.loop = true;
+            musicSource.Play();
+        }
     }
     public int CurrentLives => currentLives;
 
