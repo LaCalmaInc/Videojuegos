@@ -23103,7 +23103,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   victoryMusic: {fileID: 8300000, guid: cee08aedcca583743836f985c20afa24, type: 3}
   musicSource: {fileID: 135181425}
-  totalCollectibles: 4
+  requiredCollectibles: 4
+  totalSpawnedCollectibles: 10
   counterText: {fileID: 0}
   botonPausa: {fileID: 33752688}
   victoryMenu: {fileID: 320655676}

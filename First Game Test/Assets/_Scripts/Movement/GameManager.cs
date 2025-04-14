@@ -5,15 +5,16 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
 
-    [SerializeField] private AudioClip victoryMusic;   // Solo en GameManager
+    [SerializeField] private AudioClip victoryMusic;
     [SerializeField] private AudioSource musicSource;
 
     [Header("Objetivos")]
-    public int totalCollectibles = 5;
+    [SerializeField] private int requiredCollectibles = 5; // Lo necesario para ganar
+    [SerializeField] private int totalSpawnedCollectibles = 8; // Las que realmente se generan
     private int collected = 0;
-    public int CollectedCount => collected;
-    public int TotalCollectibles => totalCollectibles;
 
+    public int CollectedCount => collected;
+    public int TotalCollectibles => requiredCollectibles;
 
     [Header("UI")]
     [SerializeField] private TextMeshProUGUI counterText;
@@ -23,7 +24,6 @@ public class GameManager : MonoBehaviour
     [Header("Spawning")]
     [SerializeField] private GameObject collectiblePrefab;
     [SerializeField] private Rect spawnArea;
-
 
     private void Awake()
     {
@@ -36,32 +36,40 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         SpawnCollectibles();
+        UpdateUI();
     }
 
     public void Collect()
     {
         collected++;
+        UpdateUI();
 
-        if (collected >= totalCollectibles)
+        if (collected >= requiredCollectibles)
         {
             Win();
         }
     }
 
+    private void UpdateUI()
+    {
+        if (counterText != null)
+        {
+            counterText.text = $"Recolectados: {collected} / {requiredCollectibles}";
+        }
+    }
 
     private void SpawnCollectibles()
     {
         int spawned = 0;
         int maxAttempts = 100;
 
-        while (spawned < totalCollectibles && maxAttempts > 0)
+        while (spawned < totalSpawnedCollectibles && maxAttempts > 0)
         {
             Vector2 spawnPos = new Vector2(
                 Random.Range(spawnArea.xMin, spawnArea.xMax),
                 Random.Range(spawnArea.yMin, spawnArea.yMax)
             );
 
-            // Verifica si está libre (puedes ajustar la LayerMask)
             Collider2D hit = Physics2D.OverlapCircle(spawnPos, 0.5f, LayerMask.GetMask("Obstacles"));
             if (hit == null)
             {
@@ -72,22 +80,23 @@ public class GameManager : MonoBehaviour
             maxAttempts--;
         }
 
-        if (spawned < totalCollectibles)
-            Debug.LogWarning($"Solo se generaron {spawned} de {totalCollectibles} objetos. Zona limitada.");
+        if (spawned < totalSpawnedCollectibles)
+            Debug.LogWarning($"Solo se generaron {spawned} de {totalSpawnedCollectibles} objetos. Zona limitada.");
     }
 
     public void Pausa()
     {
         Time.timeScale = 0f;
     }
+
     private void Win()
     {
         Debug.Log("¡Ganaste!");
         botonPausa.SetActive(false);
         victoryMenu.SetActive(true);
         Time.timeScale = 0f;
-        MenuPausa.GameIsPaused= true;
-        // Aquí puedes: mostrar UI, reiniciar, pasar a siguiente nivel...
+        MenuPausa.GameIsPaused = true;
+
         if (musicSource != null && victoryMusic != null)
         {
             musicSource.Stop();
@@ -96,6 +105,7 @@ public class GameManager : MonoBehaviour
             musicSource.Play();
         }
     }
+
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.green;
